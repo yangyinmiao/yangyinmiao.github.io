@@ -1,0 +1,110 @@
+---
+layout: default
+---
+
+<section class="hero card">
+  <h1 data-i18n="home.greeting">{{ site.data.profile.greeting | default: site.data.profile.name | default: site.title }}</h1>
+  <p class="lead" data-i18n="home.intro">
+    {{ site.data.profile.intro | default: site.data.profile.tagline | default: site.description }}
+  </p>
+  <p class="lead note-line" data-i18n="home.writer_note">
+    {{ site.data.profile.writer_note }}
+  </p>
+  <div class="hero-actions">
+    <a class="button button-primary" href="{{ '/about/' | relative_url }}" data-i18n="home.about_button">About me</a>
+    <a class="button button-secondary" href="mailto:{{ site.data.profile.links.email }}" data-i18n="home.email_button">Email newsletter</a>
+  </div>
+</section>
+
+<section class="grid grid-2">
+  <article class="card">
+    <div class="section-title">
+      <h2><span class="section-logo">◎</span><span data-i18n="home.current_title">{{ site.data.profile.current_title | default: "Current focus" }}</span></h2>
+      <a href="{{ '/about/' | relative_url }}" data-i18n="home.more_about">More about me</a>
+    </div>
+    <p class="lead compact" data-i18n="home.current_intro">{{ site.data.profile.intro }}</p>
+    <ul class="focus-list">
+      {% for item in site.data.profile.current %}
+        <li data-i18n="home.current.{{ forloop.index0 }}">{{ item.en }}</li>
+      {% endfor %}
+    </ul>
+  </article>
+
+  <article class="card accent-card">
+    <div class="eyebrow"><span class="section-logo section-logo-accent">✦</span><span data-i18n="home.highlight_title">{{ site.data.profile.highlight_title | default: "Why this site exists" }}</span></div>
+    <p class="accent-copy" data-i18n="home.highlight">{{ site.data.profile.highlight }}</p>
+  </article>
+</section>
+
+<section class="card">
+  <div class="section-title">
+    <h2><span class="section-logo section-logo-accent">✦</span><span data-i18n="home.connect_title">{{ site.data.profile.connect_title | default: "Stay connected" }}</span></h2>
+    <a href="{{ '/about/' | relative_url }}" data-i18n="home.say_hello">Say hello</a>
+  </div>
+  <p class="lead compact" data-i18n="home.connect_intro">{{ site.data.profile.connect_intro }}</p>
+  <div class="connect-grid">
+    {% for item in site.data.profile.connect %}
+      <a class="connect-card" href="{{ item.href }}">
+        <span class="connect-badge" aria-hidden="true">{% include icon.html name=item.icon %}</span>
+        <div>
+          <strong data-i18n="home.connect.{{ item.key }}.label">{{ item.label_en }}</strong>
+          <span data-i18n="home.connect.{{ item.key }}.short">{{ item.short_en }}</span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="grid grid-2">
+  <article class="card">
+    <div class="section-title">
+      <h2><span class="section-logo">▣</span><span data-i18n="home.latest_posts">Latest posts</span></h2>
+      <a href="{{ '/blog/' | relative_url }}" data-i18n="home.all_posts">All posts</a>
+    </div>
+    <div class="stack">
+      {% for post in site.posts limit:3 %}
+        <a class="post-row" href="{{ post.url | relative_url }}">
+          <div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+          </div>
+          <time>{{ post.date | date: "%b %d, %Y" }}</time>
+        </a>
+      {% endfor %}
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="section-title">
+      <h2><span class="section-logo">📝</span><span data-i18n="home.notes">Notes</span></h2>
+      <a href="{{ '/notes/' | relative_url }}" data-i18n="home.all_notes">All notes</a>
+    </div>
+    <div class="stack">
+      {% for note in site.notes limit:3 %}
+        <a class="post-row" href="{{ note.url | relative_url }}">
+          <div>
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.excerpt | strip_html | truncatewords: 20 }}</p>
+          </div>
+          <time>{{ note.date | date: "%b %d" }}</time>
+        </a>
+      {% endfor %}
+    </div>
+  </article>
+</section>
+
+<section class="card">
+  <div class="section-title">
+    <h2><span class="section-logo">👾</span><span data-i18n="home.projects">Projects</span></h2>
+    <a href="{{ '/projects/' | relative_url }}" data-i18n="home.all_projects">All projects</a>
+  </div>
+  <div class="project-grid">
+    {% for project in site.projects limit:3 %}
+      <a class="project-card" href="{{ project.url | relative_url }}">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description | default: project.excerpt | strip_html | truncatewords: 24 }}</p>
+        <span>{{ project.status | default: "Open source template" }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,51 @@
+title: "Your Name"
+description: "A warm, content-first blog template for GitHub Pages."
+url: ""
+baseurl: ""
+lang: "en"
+timezone: "UTC"
+
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+plugins:
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:title/
+  projects:
+    output: true
+    permalink: /projects/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: "Your Name"
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: post
+      kind: note
+      author: "Your Name"
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: page
+      kind: project
+      author: "Your Name"
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+sass:
+  style: compressed
+
+exclude:
+  - README.md

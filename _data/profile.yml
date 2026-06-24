@@ -1,0 +1,60 @@
+name: Your Name
+pronouns: ""
+role: Developer, writer, and lifelong note-taker
+greeting: Hey, I'm Your Name!
+greeting_zh: 你好，我是 Your Name！
+tagline: A calm, content-first blog for essays, notes, and projects.
+intro: I'm a developer and writer. I like small tools, honest notes, and websites that feel lived in.
+intro_zh: 我是一名开发者和写作者。我喜欢小而实用的工具、诚实的记录，以及有生活感的网站。
+writer_note: Everything on this site is written by me, not AI.
+writer_note_zh: 这个网站的内容都由我亲自撰写，不是 AI 生成。
+current_title: What I am focused on
+current_title_zh: 我最近在关注
+current:
+  - en: Shipping tiny, useful experiments
+    zh: 交付小而有用的实验
+  - en: Writing posts I want to reread later
+    zh: 写下我以后还想重读的文章
+  - en: Keeping a public trail of what I learn
+    zh: 保留一条公开的学习轨迹
+connect_title: Stay Connected
+connect_title_zh: 保持联系
+connect_intro: A few places to say hello.
+connect_intro_zh: 几个可以和我打招呼的地方。
+connect:
+  - key: email
+    label_en: Email newsletter
+    label_zh: 邮件订阅
+    short_en: Mail
+    short_zh: 邮件
+    icon: email
+    href: mailto:hello@example.com
+  - key: github
+    label_en: GitHub
+    label_zh: GitHub
+    short_en: GH
+    short_zh: GH
+    icon: github
+    href: https://github.com/your-handle
+  - key: rednote
+    label_en: RedNote
+    label_zh: 小红书
+    short_en: XHS
+    short_zh: 小红书
+    icon: xiaohongshu
+    href: https://www.xiaohongshu.com/
+  - key: wechat
+    label_en: My Wechat
+    label_zh: 我的微信
+    short_en: WeChat
+    short_zh: 微信
+    icon: wechat
+    href: "#"
+links:
+  github: https://github.com/your-handle
+  email: hello@example.com
+  now: /about/
+highlight_title: Why this site exists
+highlight_title_zh: 为什么这个网站存在
+highlight: A personal site should sound like a person. Small updates, a steady point of view, and a few places to say hello go a long way.
+highlight_zh: 个人网站应该像一个真实的人。小更新、稳定的观点，以及几个可以打招呼的地方，已经足够。
